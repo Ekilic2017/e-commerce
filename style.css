@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --black: #1c2a39;
+  --gray: #5c6a79;
+  --purple: #4c3db2;
+  --transition: all 250ms ease-in-out;
+}
+.navbar{
+  height: 120px;
+  width: 80%;
+  margin-left: 10%;
+}
+.title{
+  font-weight: bold;
+}
+
+.menu, .menu__icons{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.menu li, .menu__icons li{
+  margin: 0 10px;
+}
+.menu .active{
+  color: var(--black);
+  font-weight: bold;
+}
+.menu__icons li{
+  color: var(--black);
+}
+.basket__count{
+  position: absolute;
+  right: -0.7rem;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--black);
+  border-radius: 50%;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.basket__count:empty{
+  display: none;
+}
+.basket__icon{
+  position: relative;
+}
+.slider{
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+height: 500px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.slider img{
+  height: 500px;
+}
+.store{
+  width: 80%;
+  margin-left: 10%;
+  height: 100px;
+}
+.book__card{
+  height: 400px;
+  margin-bottom: 50px;
+}
+.fos{
+font-family: "Open Sans",sans-serif;
+}
+.gray{
+  color:var(--gray)
+}
+.black{
+  color:var(--black)
+}
+.fw-bold{
+  font-weight: bold;
+}
+.book__star-rate .bi-star-fill{
+color: #eeedf5;
+margin-right: 5px;
+}
+.book__star-rate .bi-star-fill.active{
+  color: #f2c94c;
+}
+.book__card img{
+  height: 400px;
+}
+.book__reviews{
+  color:gray;
+}
+.book__description{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.old__price{
+  color:#bdbdbd;
+  text-decoration: line-through;
+}
+.btn__purple{
+  cursor: pointer;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 250ms;
+margin-top: 30px;
+width: 200px;
+padding: 5px 0;
+}
+.btn__purple:hover{
+  background-color: var(--purple);
+  color:white;
+}
+.filter__background {
+  background-color: #f4f4f5;
+  width: 400px;
+  height: 600px;
+  position: absolute;
+  left:0;
+  z-index: -1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.filter{
+  position: absolute;
+  list-style: none;
+ display: flex;
+ flex-direction: column;
+ min-height: 650px;
+ left: 50px;
+ justify-content: center;
+ cursor: pointer;
+}
+.filter li{
+  color: var(--gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.filter li:hover{
+  color:#241970;
+  font-weight: bold;
+}
+.filter li.active{
+  color: var(--purple);
+  font-weight: bold;
+}
+.filter li.active::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  display: inline-block;
+  position: absolute;
+  left: -5px;;
+
+  margin-top: 8px;
+}
+.basket__modal{
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+  background-color: #00000050;
+  width:100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top:0;
+  z-index: -1;
+}
+.basket__modal.active{
+  opacity: 1;
+  z-index: 999;
+}
+.basket__modal.active .basket__items{
+  width: 450px;
+}
+.basket__items{
+position: relative;
+transition: all 250ms ease-in-out;
+  width: 0px;
+  background-color: white;
+  height: 100%;
+  float: right;
+}
+.basket__items .bi-x{
+  position: absolute;
+  left:0;
+  top:0;
+  font-size: 3rem;
+  color: var(--black);
+  cursor:pointer;
+}
+.basket__title{
+  color: var(--black);
+  margin-top: 5rem;
+  text-align: center;
+  font-weight: bold;
+
+}
+.basket__list{
+  list-style-type: none;
+  padding: 0 5px;
+  margin-top: 2rem;
+  max-height: 650px;
+  overflow-y: auto;
+}
+.basket__item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.basket__item-info{
+  width: 250px;
+}
+.book__name{
+  font-size: 16px;
+  font-weight: bold;
+}
+.book__price{
+  font-size: 16px;
+}
+.book__remove{
+font-size: 16px;
+color: red;
+cursor: pointer;
+}
+.book__count{
+  font-size: 16px;
+  color: var(--purple);
+  font-weight: bold;
+}
+.increase, .decrease{
+  cursor: pointer;
+}
+.basket__total{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 2rem;
+  align-items: center;
+width: inherit;
+}
+.total__price:empty + .btn__purple{
+  display: none;
+}
